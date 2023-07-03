@@ -1,0 +1,6 @@
+{
+  "inlayHint.enable": false,
+  "clangd.path": "/usr/bin/clangd",
+  "html.autoClosingTags": false,
+  "html.autoCreateQuotes": false
+}
