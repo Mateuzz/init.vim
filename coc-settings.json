@@ -1,6 +1,36 @@
 {
-  "inlayHint.enable": false,
-  "clangd.path": "/usr/bin/clangd",
-  "html.autoClosingTags": false,
-  "html.autoCreateQuotes": false
+    "inlayHint.enable": false,
+    "clangd.path": "/usr/bin/clangd",
+    "html.autoClosingTags": true,
+    "html.autoCreateQuotes": false,
+    "suggest.completionItemKindLabels": {
+        "variable": "\uf0ad",
+        "constant": "\ueb51",
+        "field": "\uf171",
+        "property": "\uf171",
+        "class": "\uf0c7",
+        "struct": "\ue7a1",
+        "function": "\ue79b",
+        "method": "\uea8c",
+        "text": "\ue612",
+        "enum": "\uf435",
+        "enumMember": "\uf02b"
+    },
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "javascript.format.semicolons": "remove",
+
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
+    "intelephense.format.braces": "k&r",
+    "tsserver.implicitProjectConfig.strictFunctionTypes": false,
+
+    "coc-class-css.enabledLanguages": [
+        "html", "blade", "vue", "php"
+    ],
+
+    "intelephense.files.associations": [
+        "*.php",
+        "*.phtml",
+        "*.blade.php"
+    ]
 }
