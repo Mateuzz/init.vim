@@ -11,15 +11,18 @@ inoremap <silent><expr> <TAB>
             \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-" inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-"                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+ "
+ "inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+ "                              \: "<CR>"
 
 function! CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <CR> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+"inoremap <silent><expr> <CR> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -71,8 +74,8 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
 
 
 " Remap keys for applying codeAction to the current buffer.
@@ -145,9 +148,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 
 
-nmap <silent><nowait><expr> <A-5> coc#float#has_scroll() ? coc#float#scroll(1) : "\<A-5>"
-nmap <silent><nowait><expr> <A-4> coc#float#has_scroll() ? coc#float#scroll(0) : "\<A-4>"
-inoremap <silent><nowait><expr> <A-5> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
-inoremap <silent><nowait><expr> <A-4> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
-vnoremap <silent><nowait><expr> <A-5> coc#float#has_scroll() ? coc#float#scroll(1) : "\<A-5>"
-vnoremap <silent><nowait><expr> <A-4> coc#float#has_scroll() ? coc#float#scroll(0) : "\<A-4>"
+nmap <silent><nowait><expr> <A-4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<A-5>"
+nmap <silent><nowait><expr> <A-3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<A-4>"
+inoremap <silent><nowait><expr> <A-4> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(1)\<cr>" : "\<Right>"
+inoremap <silent><nowait><expr> <A-3> coc#float#has_scroll() ? "\<c-r>=coc#float#scroll(0)\<cr>" : "\<Left>"
+vnoremap <silent><nowait><expr> <A-4> coc#float#has_scroll() ? coc#float#scroll(1) : "\<A-5>"
+vnoremap <silent><nowait><expr> <A-3> coc#float#has_scroll() ? coc#float#scroll(0) : "\<A-4>"

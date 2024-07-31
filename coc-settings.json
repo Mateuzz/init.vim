@@ -1,8 +1,11 @@
 {
     "inlayHint.enable": false,
+
     "clangd.path": "/usr/bin/clangd",
+    "clangd.fallbackFlags": [],
     "html.autoClosingTags": true,
     "html.autoCreateQuotes": false,
+
     "suggest.completionItemKindLabels": {
         "variable": "\uf0ad",
         "constant": "\ueb51",
@@ -17,12 +20,28 @@
         "enumMember": "\uf02b"
     },
     "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-    "javascript.format.semicolons": "remove",
+    "javascript.format.semicolons": "ignore",
+
+    "java.project.sourcePaths": ["src/main/java"],
+    "java.jdt.ls.java.home": "~/.asdf/installs/java/openjdk-21.0.2",
+
+    "sql.database": "postgresql",
+
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": false,
 
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "typescript.format.semicolons": "ignore",
+    "typescript.preferences.quoteStyle": "double",
 
-    "intelephense.format.braces": "k&r",
-    "tsserver.implicitProjectConfig.strictFunctionTypes": false,
+    "volar.autoClosingTags": true,
+    "volar.autoCreateQuotes": true,
+
+    "vue.inlayHints.missingProps": true,
+    "vetur.enable": false,
+
+    "intelephense.format.braces": "psr12",
+    "intelephense.rename.namespaceMode": "all",
 
     "coc-class-css.enabledLanguages": [
         "html", "blade", "vue", "php"
