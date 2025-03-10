@@ -23,9 +23,7 @@
     "javascript.format.semicolons": "ignore",
 
     "java.project.sourcePaths": ["src/main/java"],
-    "java.jdt.ls.java.home": "~/.asdf/installs/java/openjdk-21.0.2",
-
-    "sql.database": "postgresql",
+    "java.jdt.ls.java.home": "/usr/lib/jvm/java-21-openjdk",
 
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,

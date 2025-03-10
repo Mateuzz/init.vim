@@ -1,4 +1,4 @@
-let g:coc_node_path = '/home/Mateus/.asdf/shims/node'
+" let g:coc_node_path = '/home/Mateus/.asdf/shims/node'
 let g:coc_additional_keywords = ["-"]
 
 " ==== Switch Source header ==== disabled since fswitch is better

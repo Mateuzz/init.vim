@@ -112,6 +112,7 @@ Plug 'https://github.com/tpope/vim-commentary'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'https://github.com/voldikss/vim-floaterm'
 "Plug 'https://github.com/lewis6991/impatient.nvim'
+Plug 'https://github.com/dstein64/vim-startuptime'
 " Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
 " Plug 'https://github.com/turbio/bracey.vim'
 " Plug 'https://github.com/manzeloth/live-server'
@@ -214,7 +215,7 @@ set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:ver25-iCur
 "set guifont=Fantasque\ Sans\ Mono:h12
 "set guifont=Monospace:h12
 "set guifont=Fira\ Code:h12
-set guifont=Ubuntu\ Mono\ Regular:h12
+set guifont=Ubuntu\ Mono:h12
 set mouse=a
 set shell=/bin/zsh
 
