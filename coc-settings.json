@@ -41,9 +41,7 @@
     "intelephense.format.braces": "psr12",
     "intelephense.rename.namespaceMode": "all",
 
-    "coc-class-css.enabledLanguages": [
-        "html", "blade", "vue", "php"
-    ],
+    "coc-class-css.enabledLanguages": [ "html", "blade", "vue", "php" ],
 
     "intelephense.files.associations": [
         "*.php",

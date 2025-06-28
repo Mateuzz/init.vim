@@ -177,7 +177,7 @@ lspconfig.tsserver.setup{
         plugins = {
             {
                 name = "@vue/typescript-plugin",
-                location = "~/.asdf/installs/nodejs/21.7.1/lib/node_modules/@vue/typescript-plugin",
+                location = "/usr/lib/node_modules/@vue/typescript-plugin",
                 languages = {"javascript", "typescript", "vue"}
             }
         }

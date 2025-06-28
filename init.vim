@@ -195,6 +195,7 @@ set softtabstop=-1
 set backspace=indent,eol,start
 set nowritebackup
 set nobackup 
+set undofile
 set timeoutlen=500
 set autoindent
 set cindent
@@ -207,21 +208,25 @@ set updatetime=250
 "set shortmess=cFWlat
 set tags+=./tags;
 set pumheight=10
-set undofile
 set cinoptions+=:0,g0,l1,m0,M0
 let c_no_curly_error=1
 "set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:Cursor-BLOCK-Cursor/lCursor
 set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:ver25-iCursor/lCursor
-"set guifont=Fantasque\ Sans\ Mono:h12
+set guifont=Fantasque\ Sans\ Mono:h12
 "set guifont=Monospace:h12
 "set guifont=Fira\ Code:h12
-set guifont=Ubuntu\ Mono:h12
+"set guifont=Ubuntu\ Mono:h12
 set mouse=a
 set shell=/bin/zsh
 
 set background=dark
-colorscheme codedark
-"colorscheme kanagawa
+"colorscheme codedark
+"colorscheme gruvbox
+colorscheme dark-obsidian-darker
+
+
+" set background=light
+" colorscheme solarized
 
 filetype plugin indent on
 
@@ -236,16 +241,6 @@ runtime ./functions.vim
 " =============================================================================
 "                                 STANDART MAPPINGS
 " =============================================================================
-
-" ============== LSP ===============
-" nnoremap gd <cmd>lua vim.lsp.buf.definition()<CR>
-" nnoremap gi <cmd>lua vim.lsp.buf.implementation()<CR>
-" nnoremap <leader>ca <cmd>lua vim.lsp.buf.code_action()<CR>
-" nnoremap <leader>fo <cmd>lua vim.lsp.buf.format()<CR>
-" nnoremap <leader>rn <cmd>lua vim.lsp.buf.rename()<CR>
-" nnoremap <leader>re <cmd>lua vim.lsp.buf.references()<CR>
-" nnoremap <leader>ds <cmd>lua vim.lsp.buf.document_symbol()<CR>
-" nnoremap <leader>ws <cmd>lua vim.lsp.buf.workspace_symbol()<CR>
 
 " ============== Mouse can be dragger without enterin visual mode ===============
 " nnoremap <LeftDrag> <LeftMouse>
@@ -606,6 +601,3 @@ let g:NERDTreeShowHidden = 1
 " ================================================================================================
 
 runtime coc.vim
-
-
-
