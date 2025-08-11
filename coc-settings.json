@@ -2,7 +2,7 @@
     "inlayHint.enable": false,
 
     "clangd.path": "/usr/bin/clangd",
-    "clangd.fallbackFlags": [],
+    "clangd.fallbackFlags": ["-std=c++23"],
     "html.autoClosingTags": true,
     "html.autoCreateQuotes": false,
 
@@ -27,25 +27,33 @@
 
     "prettier.tabWidth": 4,
     "prettier.useTabs": false,
+    "prettier.semi": false,
+
+    "prettier.enable": false,
 
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
     "typescript.format.semicolons": "ignore",
     "typescript.preferences.quoteStyle": "double",
 
-    "volar.autoClosingTags": true,
-    "volar.autoCreateQuotes": true,
-
-    "vue.inlayHints.missingProps": true,
-    "vetur.enable": false,
-
     "intelephense.format.braces": "psr12",
     "intelephense.rename.namespaceMode": "all",
-
-    "coc-class-css.enabledLanguages": [ "html", "blade", "vue", "php" ],
+    
+    "coc-class-css.languages": [
+        "html",
+        "blade",
+        "js",
+        "javascript",
+        "php",
+        "vue",
+        "javascriptreact"
+    ],
+    "html.format.wrapLineLength": 200,
 
     "intelephense.files.associations": [
         "*.php",
         "*.phtml",
         "*.blade.php"
-    ]
+    ],
+
+    "snippets.ultisnips.pythonPrompt": false
 }

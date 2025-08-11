@@ -5,7 +5,6 @@ call plug#begin()
 " ============== AutoComplete =========================
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/tpope/vim-surround'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/Raimondi/delimitMate'
 " Plug 'https://github.com/jiangmiao/auto-pairs' "For nvim lsp
 " Plug 'https://github.com/Exafunction/codeium.vim'
@@ -13,6 +12,13 @@ Plug 'https://github.com/Raimondi/delimitMate'
 "Plug 'https://github.com/windwp/nvim-autopairs'
 Plug 'https://github.com/honza/vim-snippets'
 
+" ============== COC =========================
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+Plug 'https://github.com/neoclide/coc-html'
+Plug 'https://github.com/neoclide/coc-css'
+Plug 'https://github.com/neoclide/coc-tsserver'
+Plug 'https://github.com/Softmotions/coc-class-css'
 
 
 " ============== LSP =========================
@@ -69,23 +75,24 @@ Plug 'https://github.com/vim-test/vim-test'
  " ================== File Explorer and Projects ===================
 Plug 'https://github.com/leafOfTree/vim-project'
 Plug 'https://github.com/preservim/nerdtree'
-Plug 'https://github.com/mhinz/vim-startify'
+" Plug 'https://github.com/nvim-tree/nvim-tree.lua'
+" Plug 'https://github.com/mhinz/vim-startify'
 
 " ====================== Themes ========================================
 Plug 'https://github.com/Mateuzz/dark-obsidian.vim'
-Plug 'https://github.com/tomasiser/vim-code-dark'
-Plug 'https://github.com/morhetz/gruvbox'
-Plug 'https://github.com/doums/darcula'
-Plug 'https://github.com/ayu-theme/ayu-vim'
-Plug 'https://github.com/joshdick/onedark.vim'
-Plug 'https://github.com/sainnhe/gruvbox-material'
-Plug 'https://github.com/nanotech/jellybeans.vim'
-Plug 'https://github.com/rebelot/kanagawa.nvim'
-Plug 'https://github.com/altercation/vim-colors-solarized'
-Plug 'https://github.com/NLKNguyen/papercolor-theme'
-Plug 'https://github.com/rakr/vim-one'
-Plug 'https://github.com/catppuccin/nvim'
-Plug 'https://github.com/santos-gabriel-dario/darcula-solid.nvim'
+" Plug 'https://github.com/tomasiser/vim-code-dark'
+"Plug 'https://github.com/morhetz/gruvbox'
+" Plug 'https://github.com/doums/darcula'
+" Plug 'https://github.com/ayu-theme/ayu-vim'
+" Plug 'https://github.com/joshdick/onedark.vim'
+" Plug 'https://github.com/sainnhe/gruvbox-material'
+" Plug 'https://github.com/nanotech/jellybeans.vim'
+" Plug 'https://github.com/rebelot/kanagawa.nvim'
+" Plug 'https://github.com/altercation/vim-colors-solarized'
+" Plug 'https://github.com/NLKNguyen/papercolor-theme'
+" Plug 'https://github.com/rakr/vim-one'
+" Plug 'https://github.com/catppuccin/nvim'
+" Plug 'https://github.com/santos-gabriel-dario/darcula-solid.nvim'
 " Plug 'https://github.com/sthendev/mariana.vim'
 " Plug 'https://github.com/kaiuri/nvim-juliana'
 " Plug 'https://github.com/abra/vim-obsidian'
@@ -98,11 +105,11 @@ Plug 'https://github.com/santos-gabriel-dario/darcula-solid.nvim'
 
  " ===================== GUI helpers ===============================
 "Plug 'https://github.com/lukas-reineke/indent-blankline.nvim'  
-Plug 'https://github.com/nvim-lualine/lualine.nvim'
+" Plug 'https://github.com/nvim-lualine/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'psliwka/vim-smoothie'
-Plug 'https://github.com/mbbill/undotree'
+" Plug 'psliwka/vim-smoothie'
+ Plug 'https://github.com/mbbill/undotree'
 " Plug 'https://github.com/ap/vim-css-color'
 " Plug 'https://github.com/beauwilliams/focus.nvim'
 
@@ -110,9 +117,9 @@ Plug 'https://github.com/mbbill/undotree'
 Plug 'https://github.com/skywind3000/asyncrun.vim'
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'rbgrouleff/bclose.vim'
-Plug 'https://github.com/voldikss/vim-floaterm'
-"Plug 'https://github.com/lewis6991/impatient.nvim'
-Plug 'https://github.com/dstein64/vim-startuptime'
+" Plug 'https://github.com/voldikss/vim-floaterm'
+" Plug 'https://github.com/lewis6991/impatient.nvim'
+" Plug 'https://github.com/dstein64/vim-startuptime'
 " Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
 " Plug 'https://github.com/turbio/bracey.vim'
 " Plug 'https://github.com/manzeloth/live-server'
@@ -121,9 +128,12 @@ Plug 'https://github.com/dstein64/vim-startuptime'
 
 " =================== Git integration ===================
 Plug 'https://github.com/tpope/vim-fugitive'
+" Plug 'kdheepak/lazygit.nvim'
+"Plug 'https://github.com/NeogitOrg/neogit'
 Plug 'https://github.com/sindrets/diffview.nvim'
 Plug 'https://github.com/lewis6991/gitsigns.nvim'
 "Plug 'https://github.com/airblade/vim-gitgutter'
+
 
 
 "========== Others Disabled ==========================================
@@ -171,8 +181,8 @@ set splitright
 set inccommand=split
 set noerrorbells
 set vb t_vb=
-set laststatus=0
-set statusline=%F%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [%04l,%04v]\ [%p%%]\ [%L]
+set laststatus=2
+set statusline=%f%m%r%h%w%=\ %y\ [%{&ff}]\ [%04l,%04v]\ [%p%%]\ [%L]
 set noshowmode
 set incsearch
 set hlsearch
@@ -194,7 +204,7 @@ set tabstop=4
 set softtabstop=-1
 set backspace=indent,eol,start
 set nowritebackup
-set nobackup 
+set nobackup
 set undofile
 set timeoutlen=500
 set autoindent
@@ -210,9 +220,9 @@ set tags+=./tags;
 set pumheight=10
 set cinoptions+=:0,g0,l1,m0,M0
 let c_no_curly_error=1
-"set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:Cursor-BLOCK-Cursor/lCursor
-set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:ver25-iCursor/lCursor
-set guifont=Fantasque\ Sans\ Mono:h12
+set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:Cursor-BLOCK-Cursor/lCursor
+" set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:ver25-iCursor/lCursor
+"set guifont=Fantasque\ Sans\ Mono:h12
 "set guifont=Monospace:h12
 "set guifont=Fira\ Code:h12
 "set guifont=Ubuntu\ Mono:h12
@@ -245,6 +255,11 @@ runtime ./functions.vim
 " ============== Mouse can be dragger without enterin visual mode ===============
 " nnoremap <LeftDrag> <LeftMouse>
 " noremap! <LeftDrag> <LeftMouse>
+
+
+" TAbs 
+nnoremap <silent><leader>ta :tabedit<CR>
+nnoremap <silent><leader>tc :tabclose<CR>
 
 " Faster Deleting whole lines
 nnoremap dd D
@@ -306,7 +321,8 @@ tnoremap jk <c-\><c-n>
 " ==== Close and save ====
 nnoremap <c-q> :q<cr>
 nnoremap <c-'> :bd!<cr>
-nnoremap <c-4> :qa!<cr>
+nnoremap <c-5> :qa!<cr>
+nnoremap <c-4> :qa<cr>
 nnoremap <c-3> :wqa!<cr>
 nnoremap <c-2> :wa<cr>
 nnoremap <c-1> :w<cr>
@@ -342,10 +358,19 @@ nnoremap <leader>fvu :set filetype=vue<cr>
 nnoremap <leader>fht :set filetype=html<cr>
 nnoremap <leader>fb :set filetype=blade<cr>
 
-nnoremap <leader>fjs :set indentexpr=GetJavascriptIndent()<CR>
+nnoremap <leader>ijs :set indentexpr=GetJavascriptIndent()<CR>
+nnoremap <leader>fjs :set filetype=javascript<CR>
 
 nnoremap <leader>sht :set syntax=html<cr>
 nnoremap <leader>sjs :set syntax=js<cr>
+
+
+" ================================================================================================
+"                               BETTER GREP
+" ================================================================================================
+
+set grepprg=rg\ --vimgrep\ --no-heading
+set grepformat=%f:%l:%c:%m
 
 
 " ================================================================================================
@@ -460,7 +485,7 @@ nnoremap <leader>ar :AsyncRun
 "             PLUGIN :                 LUALINE
 " ================================================================================================
 
-lua require('lualine').setup { theme = 'ayu' }
+" lua require('lualine').setup { theme = 'ayu' }
 
 " ================================================================================================
 "             PLUGIN :                 IMPATIENT
@@ -574,13 +599,17 @@ inoremap <c--> <esc>:Emmet
 "             PLUGIN :                 Nerdtree
 " ================================================================================================
 
-nnoremap <c-n> <cmd>NERDTreeToggle<cr>
-nnoremap <c-m> <cmd>NERDTree<cr>
+nnoremap <c-,> :NERDTreeToggle<cr>
+nnoremap <c-.> :NERDTree<cr>
 
 let g:NERDTreeSortOrder = ['\/$', '\.html$', '\.ts$', '\.js$','\.css$', '[[extension]]', '\.json$', '\.txt$']
 let g:NERDTreeSortHiddenFirst = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeShowHidden = 1
+
+
+" lua require("nvim-tree").setup()
+
 
 " ================================================================================================
 "             PLUGIN :                 Indent blankline
@@ -595,6 +624,12 @@ let g:NERDTreeShowHidden = 1
 
 
 "runtime lsp.vim
+
+" ================================================================================================
+"             PLUGIN :                 neogit
+" ================================================================================================
+
+"lua require('neogit').setup{}
 
 " ================================================================================================
 "             PLUGIN :                 COC
