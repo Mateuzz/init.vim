@@ -22,22 +22,22 @@ Plug 'https://github.com/Softmotions/coc-class-css'
 
 
 " ============== LSP =========================
-" Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
-" Plug 'saadparwaiz1/cmp_luasnip'
-""
-" Plug 'williamboman/mason.nvim'
-" Plug 'neovim/nvim-lspconfig'
-"Plug 'https://github.com/gfanto/fzf-lsp.nvim'
-" Plug 'https://github.com/ray-x/lsp_signature.nvim'
-" Plug 'https://github.com/onsails/lspkind.nvim'
-" Plug 'rmagatti/goto-preview'
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/nvim-cmp'
-"Plug 'b0o/schemastore.nvim'
-"Plug 'https://github.com/Jezda1337/nvim-html-css'
+ " Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
+ " Plug 'saadparwaiz1/cmp_luasnip'
+" ""
+ " Plug 'williamboman/mason.nvim'
+ " Plug 'neovim/nvim-lspconfig'
+" Plug 'https://github.com/gfanto/fzf-lsp.nvim'
+ " Plug 'https://github.com/ray-x/lsp_signature.nvim'
+ " Plug 'https://github.com/onsails/lspkind.nvim'
+ " Plug 'rmagatti/goto-preview'
+ " Plug 'hrsh7th/cmp-nvim-lsp'
+ " Plug 'hrsh7th/cmp-buffer'
+ " Plug 'hrsh7th/cmp-path'
+ " Plug 'hrsh7th/cmp-cmdline'
+ " Plug 'hrsh7th/nvim-cmp'
+" Plug 'b0o/schemastore.nvim'
+" Plug 'https://github.com/Jezda1337/nvim-html-css'
 "
 
  " ====================  Disabled =========================
@@ -63,8 +63,8 @@ Plug 'https://github.com/derekwyatt/vim-fswitch'
 " Plug 'https://github.com/nvim-telescope/telescope.nvim'
 " Plug 'https://github.com/nvim-telescope/telescope-file-browser.nvim'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+ Plug 'junegunn/fzf.vim'
 " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 Plug 'nanotee/zoxide.vim'
 
@@ -105,7 +105,7 @@ Plug 'https://github.com/Mateuzz/dark-obsidian.vim'
 
  " ===================== GUI helpers ===============================
 "Plug 'https://github.com/lukas-reineke/indent-blankline.nvim'  
-" Plug 'https://github.com/nvim-lualine/lualine.nvim'
+ " Plug 'https://github.com/nvim-lualine/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'
 " Plug 'psliwka/vim-smoothie'
@@ -182,7 +182,7 @@ set inccommand=split
 set noerrorbells
 set vb t_vb=
 set laststatus=2
-set statusline=%f%m%r%h%w%=\ %y\ [%{&ff}]\ [%04l,%04v]\ [%p%%]\ [%L]
+set statusline=\ >\ %f%m%r%h%w%=\ %y\ [%{&ff}]\ [%04l,%04v]\ [%p%%]\ [%L]
 set noshowmode
 set incsearch
 set hlsearch
@@ -203,8 +203,8 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=-1
 set backspace=indent,eol,start
-set nowritebackup
-set nobackup
+set writebackup
+set backup
 set undofile
 set timeoutlen=500
 set autoindent
@@ -221,6 +221,8 @@ set pumheight=10
 set cinoptions+=:0,g0,l1,m0,M0
 let c_no_curly_error=1
 set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:Cursor-BLOCK-Cursor/lCursor
+set dir=/tmp
+set bdir=/tmp/backup
 " set guicursor+=n:blinkwait850-blinkoff450-blinkon430-Cursor/lCursor,i:ver25-iCursor/lCursor
 "set guifont=Fantasque\ Sans\ Mono:h12
 "set guifont=Monospace:h12
@@ -232,7 +234,7 @@ set shell=/bin/zsh
 set background=dark
 "colorscheme codedark
 "colorscheme gruvbox
-colorscheme dark-obsidian-darker
+colorscheme rust
 
 
 " set background=light
@@ -240,7 +242,7 @@ colorscheme dark-obsidian-darker
 
 filetype plugin indent on
 
-au! BufWritePost $MYVIMRC source %
+" au! BufWritePost $MYVIMRC source %
 au! FileType php  set indentexpr= | set cindent
 " au! FileType vue  set indentexpr= | set nocindent | set cino+=g1
 
@@ -485,7 +487,21 @@ nnoremap <leader>ar :AsyncRun
 "             PLUGIN :                 LUALINE
 " ================================================================================================
 
-" lua require('lualine').setup { theme = 'ayu' }
+" lua << EOF
+" require('lualine').setup({
+"     options = {
+"         sections = {
+"             lualine_c = {
+"                 {
+"                     'filename',
+"                     path = 1
+"                 }
+"             }
+"         }
+"     }
+" })
+" EOF
+
 
 " ================================================================================================
 "             PLUGIN :                 IMPATIENT
@@ -601,6 +617,8 @@ inoremap <c--> <esc>:Emmet
 
 nnoremap <c-,> :NERDTreeToggle<cr>
 nnoremap <c-.> :NERDTree<cr>
+nnoremap <c-;> :NERDTreeFocus<cr>
+
 
 let g:NERDTreeSortOrder = ['\/$', '\.html$', '\.ts$', '\.js$','\.css$', '[[extension]]', '\.json$', '\.txt$']
 let g:NERDTreeSortHiddenFirst = 1
@@ -635,4 +653,4 @@ let g:NERDTreeShowHidden = 1
 "             PLUGIN :                 COC
 " ================================================================================================
 
-runtime coc.vim
+ runtime coc.vim

@@ -57,7 +57,7 @@ require('goto-preview').setup {
 
 local cmp = require'cmp'
 local lspkind = require('lspkind')
-local autopairs = require('nvim-autopairs')
+-- local autopairs = require('nvim-autopairs')
 
 -- require('html-css'):setup{
     -- file_extensions = { "css", "sass", "scss", "less" },
@@ -84,8 +84,8 @@ cmp.setup({
     },
 
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+         -- completion = cmp.config.window.bordered(),
+         documentation = cmp.config.window.bordered(),
     },
 
     mapping = cmp.mapping.preset.insert({
@@ -156,21 +156,23 @@ cmp.setup.cmdline({ ':' }, {
 -- Set up lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require("lspconfig")
+local configs = require("lspconfig.configs")
+
 
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 -- capabilities.semanticTokensProvider = nil
 
-lspconfig.jsonls.setup {
-    capabilities = capabilities,
-    settings = {
+ lspconfig.jsonls.setup {
+     capabilities = capabilities,
+     settings = {
         json = {
-            schemas = require('schemastore').json.schemas(),
-            validate = { enable = true },
-        },
-    },
-}
+             schemas = require('schemastore').json.schemas(),
+             validate = { enable = true },
+         },
+     },
+ }
 
-lspconfig.tsserver.setup{
+lspconfig.ts_ls.setup{
     capabilities = capabilities,
 
     init_options = {
@@ -193,7 +195,8 @@ lspconfig.tsserver.setup{
 
 lspconfig['intelephense'].setup {
     capabilities = capabilities
-}
+    }
+
 lspconfig['html'].setup {
     capabilities = capabilities
 }
