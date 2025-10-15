@@ -10,27 +10,28 @@ Plug 'https://github.com/Raimondi/delimitMate'
 " Plug 'https://github.com/Exafunction/codeium.vim'
 " Plug 'https://github.com/rstacruz/vim-closer' 
 "Plug 'https://github.com/windwp/nvim-autopairs'
-Plug 'https://github.com/honza/vim-snippets'
+" Plug 'https://github.com/honza/vim-snippets'
 
 " ============== COC =========================
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
-Plug 'https://github.com/neoclide/coc-html'
-Plug 'https://github.com/neoclide/coc-css'
-Plug 'https://github.com/neoclide/coc-tsserver'
-Plug 'https://github.com/Softmotions/coc-class-css'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'https://github.com/neoclide/coc-html'
+" Plug 'https://github.com/neoclide/coc-css'
+" Plug 'https://github.com/neoclide/coc-tsserver'
+" Plug 'https://github.com/Softmotions/coc-class-css'
 
 
 " ============== LSP =========================
- " Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
+ Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
  " Plug 'saadparwaiz1/cmp_luasnip'
 " ""
- " Plug 'williamboman/mason.nvim'
- " Plug 'neovim/nvim-lspconfig'
+ Plug 'williamboman/mason.nvim'
+ Plug 'neovim/nvim-lspconfig'
+ Plug 'rmagatti/goto-preview'
+ Plug 'saghen/blink.cmp'
 " Plug 'https://github.com/gfanto/fzf-lsp.nvim'
  " Plug 'https://github.com/ray-x/lsp_signature.nvim'
  " Plug 'https://github.com/onsails/lspkind.nvim'
- " Plug 'rmagatti/goto-preview'
  " Plug 'hrsh7th/cmp-nvim-lsp'
  " Plug 'hrsh7th/cmp-buffer'
  " Plug 'hrsh7th/cmp-path'
@@ -57,7 +58,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
  " ============= Code navigation ===================
 Plug 'https://github.com/justinmk/vim-sneak'
-Plug 'https://github.com/dkprice/vim-easygrep'
+" Plug 'https://github.com/dkprice/vim-easygrep'
+Plug 'https://github.com/MagicDuck/grug-far.nvim'
 Plug 'https://github.com/derekwyatt/vim-fswitch'
 
 " Plug 'https://github.com/nvim-telescope/telescope.nvim'
@@ -198,7 +200,7 @@ set lazyredraw
 set confirm
 set encoding=UTF-8
 set smarttab
-set expandtab
+set noexpandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=-1
@@ -424,6 +426,8 @@ nnoremap <leader>fg :GitFiles<CR>
 nnoremap <leader>fh :Buffers<CR>
 nnoremap <leader>xo :Zi<CR>
 
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 " ================================================================================================
 "             PLUGIN :                  DiffView
 " ================================================================================================
@@ -641,7 +645,7 @@ let g:NERDTreeShowHidden = 1
 " ================================================================================================
 
 
-"runtime lsp.vim
+runtime lsp.vim
 
 " ================================================================================================
 "             PLUGIN :                 neogit
@@ -653,4 +657,6 @@ let g:NERDTreeShowHidden = 1
 "             PLUGIN :                 COC
 " ================================================================================================
 
- runtime coc.vim
+ " runtime coc.vim
+
+ lua require('grug-far').setup({})
