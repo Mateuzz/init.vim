@@ -47,7 +47,9 @@
         "vue",
         "javascriptreact"
     ],
-    "html.format.wrapLineLength": 100,
+    "html.format.wrapLineLength": 300,
+
+	"intelephense.environment.phpVersion": "8.4.13",
 
     "intelephense.files.associations": [
         "*.php",

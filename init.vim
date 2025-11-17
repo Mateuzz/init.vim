@@ -5,31 +5,31 @@ call plug#begin()
 " ============== AutoComplete =========================
 Plug 'https://github.com/mattn/emmet-vim'
 Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/Raimondi/delimitMate'
+"Plug 'https://github.com/Raimondi/delimitMate'
 " Plug 'https://github.com/jiangmiao/auto-pairs' "For nvim lsp
 " Plug 'https://github.com/Exafunction/codeium.vim'
 " Plug 'https://github.com/rstacruz/vim-closer' 
-"Plug 'https://github.com/windwp/nvim-autopairs'
-" Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/windwp/nvim-autopairs'
+Plug 'https://github.com/honza/vim-snippets'
 
 " ============== COC =========================
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'https://github.com/neoclide/coc-html'
-" Plug 'https://github.com/neoclide/coc-css'
-" Plug 'https://github.com/neoclide/coc-tsserver'
-" Plug 'https://github.com/Softmotions/coc-class-css'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'yaegassy/coc-intelephense', {'do': 'yarn install --frozen-lockfile'}
+Plug 'https://github.com/neoclide/coc-html'
+Plug 'https://github.com/neoclide/coc-css'
+Plug 'https://github.com/neoclide/coc-tsserver'
+Plug 'https://github.com/Softmotions/coc-class-css'
 
 
 " ============== LSP =========================
- Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
- " Plug 'saadparwaiz1/cmp_luasnip'
-" ""
- Plug 'williamboman/mason.nvim'
- Plug 'neovim/nvim-lspconfig'
- Plug 'rmagatti/goto-preview'
- Plug 'saghen/blink.cmp'
-" Plug 'https://github.com/gfanto/fzf-lsp.nvim'
+ " Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'} " Replace <CurrentMajor> by the latest released major (first number of latest release)
+ " " Plug 'saadparwaiz1/cmp_luasnip'
+" " ""
+ " Plug 'williamboman/mason.nvim'
+ " Plug 'neovim/nvim-lspconfig'
+ " Plug 'rmagatti/goto-preview'
+ " Plug 'saghen/blink.cmp'
+ " Plug 'https://github.com/gfanto/fzf-lsp.nvim'
  " Plug 'https://github.com/ray-x/lsp_signature.nvim'
  " Plug 'https://github.com/onsails/lspkind.nvim'
  " Plug 'hrsh7th/cmp-nvim-lsp'
@@ -37,7 +37,7 @@ Plug 'https://github.com/Raimondi/delimitMate'
  " Plug 'hrsh7th/cmp-path'
  " Plug 'hrsh7th/cmp-cmdline'
  " Plug 'hrsh7th/nvim-cmp'
-" Plug 'b0o/schemastore.nvim'
+ " Plug 'b0o/schemastore.nvim'
 " Plug 'https://github.com/Jezda1337/nvim-html-css'
 "
 
@@ -58,6 +58,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
  " ============= Code navigation ===================
 Plug 'https://github.com/justinmk/vim-sneak'
+Plug 'https://github.com/ThePrimeagen/harpoon', {'branch': 'harpoon2'}
 " Plug 'https://github.com/dkprice/vim-easygrep'
 Plug 'https://github.com/MagicDuck/grug-far.nvim'
 Plug 'https://github.com/derekwyatt/vim-fswitch'
@@ -79,6 +80,7 @@ Plug 'https://github.com/leafOfTree/vim-project'
 Plug 'https://github.com/preservim/nerdtree'
 " Plug 'https://github.com/nvim-tree/nvim-tree.lua'
 " Plug 'https://github.com/mhinz/vim-startify'
+ Plug 'https://github.com/nosduco/remote-sshfs.nvim'
 
 " ====================== Themes ========================================
 Plug 'https://github.com/Mateuzz/dark-obsidian.vim'
@@ -119,7 +121,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'https://github.com/skywind3000/asyncrun.vim'
 Plug 'https://github.com/tpope/vim-commentary'
 Plug 'rbgrouleff/bclose.vim'
-" Plug 'https://github.com/voldikss/vim-floaterm'
+ Plug 'https://github.com/voldikss/vim-floaterm'
 " Plug 'https://github.com/lewis6991/impatient.nvim'
 " Plug 'https://github.com/dstein64/vim-startuptime'
 " Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
@@ -201,7 +203,7 @@ set confirm
 set encoding=UTF-8
 set smarttab
 set noexpandtab
-set shiftwidth=4
+set shiftwidth=0
 set tabstop=4
 set softtabstop=-1
 set backspace=indent,eol,start
@@ -245,7 +247,8 @@ colorscheme rust
 filetype plugin indent on
 
 " au! BufWritePost $MYVIMRC source %
-au! FileType php  set indentexpr= | set cindent
+au! FileType php  set indentexpr= | set cindent | set filetype=php | set syntax=php
+au! BufRead,BufNewFile *.php* setlocal filetype=php | setlocal syntax=php
 " au! FileType vue  set indentexpr= | set nocindent | set cino+=g1
 
 au! BufRead,BufNewFile *.blade* set filetype=blade | set syntax=html
@@ -330,6 +333,8 @@ nnoremap <c-4> :qa<cr>
 nnoremap <c-3> :wqa!<cr>
 nnoremap <c-2> :wa<cr>
 nnoremap <c-1> :w<cr>
+inoremap <c-1> <esc>:w<cr>
+inoremap <c-2> <esc>:wa<cr>
 
 " ========= Open Explorer ==============
 
@@ -367,6 +372,7 @@ nnoremap <leader>fjs :set filetype=javascript<CR>
 
 nnoremap <leader>sht :set syntax=html<cr>
 nnoremap <leader>sjs :set syntax=js<cr>
+nnoremap <leader>sph :set syntax=php<cr>
 
 
 " ================================================================================================
@@ -419,12 +425,12 @@ nnoremap <leader>gs <cmd>Gitsigns toggle_signs<cr>
 " nnoremap <leader>fg :FzfLua git_files<CR>
 " nnoremap <leader>fh :FzfLua buffers<CR>
 
-nnoremap <leader>fi :FZF<CR>
-nnoremap <leader>fw :History<CR>
-nnoremap <leader>ft :Tags<CR>
-nnoremap <leader>fg :GitFiles<CR>
-nnoremap <leader>fh :Buffers<CR>
-nnoremap <leader>xo :Zi<CR>
+nnoremap <space>q :FZF<CR>
+nnoremap <space>h :History<CR>
+nnoremap <space>t :Tags<CR>
+nnoremap <space>g :GitFiles<CR>
+nnoremap <space>b :Buffers<CR>
+nnoremap <space>- :Zi<CR>
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
@@ -477,15 +483,13 @@ let g:delimitMate_expand_space=1
 "             PLUGIN :                 Autopairs
 " ================================================================================================
 
-"lua require("nvim-autopairs").setup()
+lua require("nvim-autopairs").setup()
 
 " ================================================================================================
 "             PLUGIN :                 ASYNCRUN
 " ================================================================================================
 
 nnoremap <leader>ct :AsyncRun ctags -R .<cr>
-nnoremap <leader>as :AsyncStop<cr>
-nnoremap <leader>ar :AsyncRun 
 
 " ================================================================================================
 "             PLUGIN :                 LUALINE
@@ -541,7 +545,7 @@ let g:EasyGrepReplaceWindowMode=2
 
 " ================================================================================================
 "             PLUGIN :                 FSWITCH
-" ================================================================================================
+	" ================================================================================================
 
 nmap <silent> <Leader>ho :FSHere<cr>
 nmap <silent> <Leader>hl :FSRight<cr>
@@ -639,13 +643,22 @@ let g:NERDTreeShowHidden = 1
 
 "lua require("ibl").setup()
 
+" ================================================================================================
+"             PLUGIN :                 Harpoon
+" ================================================================================================
+
+lua<<EOF
+local harpoon = require("harpoon").setup()
+vim.keymap.set("n", "<space>m", function() harpoon:list():add() end)
+vim.keymap.set("n", "<space>y", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+EOF
 
 " ================================================================================================
 "             PLUGIN :                 LSP
 " ================================================================================================
 
 
-runtime lsp.vim
+"runtime lsp.vim
 
 " ================================================================================================
 "             PLUGIN :                 neogit
@@ -657,6 +670,6 @@ runtime lsp.vim
 "             PLUGIN :                 COC
 " ================================================================================================
 
- " runtime coc.vim
+ runtime coc.vim
 
  lua require('grug-far').setup({})

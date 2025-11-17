@@ -197,7 +197,7 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
      capabilities = capabilities,
      settings = {
         json = {
-             -- schemas = require('schemastore').json.schemas(),
+             schemas = require('schemastore').json.schemas(),
              validate = { enable = true },
          },
      },
